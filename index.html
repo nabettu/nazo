@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <meta name="robots" content="INDEX,FOLLOW" />
-  <meta name="viewport" content="width=device-width, maximum-scale=1.0,initial-scale=0.7, user-scalable=1">
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0,initial-scale=1.0, user-scalable=1">
 
   <script src="js/jquery.min.js"></script>
   <script src="js/main.js"></script>
@@ -63,9 +63,65 @@
 </head>
 <body>
 
+  <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="nav-container">
+          なぞなぞbotのヒントページ
+          <ul class="nav navbar-nav pull-right" >
+             <li style="float:left"><a href="#makeModal" data-toggle="modal">？</a></li>
+          </ul>
+        </div>
+      </div>
+  </div><!--navbar-->
+
+  <div id="makeModal" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-body">
+              <h5>ジェネレータを作る</h5>
+              <p>本サービスでオリジナルの画像ジェネレータを作る際にはtwitterでのユーザー登録が必要です。ユーザーへ予告なくつぶやく事は行いませんので、ぜひ登録して利用してみて下さい。</p>
+              <p>下のボタンを押すとtwitterの認証画面へ遷移するので、認証お願いします。</p>
+              <a href="getToken.php?state=make" class="btn btn-info inNavBtn">画像ジェネレータを作ってみる!</a><br>
+              <img class="popularImg" src="img/makeSample.png" />
+              <p>画像ジェネレータがどんなものかわからない方は、ページ下部のジェネレータ一覧などから画像を選んで試しに使ってみて下さい！</p>
+          </div>
+          <div class="modal-footer">
+              <a href="#" class="btn btn-warning" data-dismiss="modal">閉じる</a>
+          </div>
+          </div>
+      </div>
+  </div>
+
 <div class="contents">
-  <h3 class="posttitle">なぞなぞbotのヒントページ</h3>  
+  <div class="hintList">
+    <img src="img/face.png" class="listImg"/>
+    <div class="hintTitle">第１問</div>
+    <div class="hintContents">まぁこれを答えられない人はいないでしょう</div>
+  </div>
+  <div class="hintList">
+    <img src="img/face.png" class="listImg"/>
+    <div class="hintTitle">第１問</div>
+    <div class="hintContents">まぁこれを答えられない人はいないでしょう</div>
+  </div>
+  <div class="hintList">
+    <img src="img/face.png" class="listImg"/>
+    <div class="hintTitle">第１問</div>
+    <div class="hintContents">まぁこれを答えられない人はいないでしょう</div>
+  </div>
+  <div class="hintList">
+    <img src="img/face.png" class="listImg"/>
+    <div class="hintTitle">第１問</div>
+    <div class="hintContents">まぁこれを答えられない人はいないでしょう</div>
+  </div>
 </div>
+
+<div class="navbar navbar-inverse bottomnav">
+    <div class="navbar-inner">
+      <div class="nav-container">
+        下メニュー
+      </div>
+    </div>
+</div><!--navbar-->
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
