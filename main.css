@@ -8,7 +8,7 @@ body {
 
 .contents{
     max-width:790px;
-    margin:50px auto 0px;
+    margin:50px auto 150px;
     background-color: #ffffff;
 }
 
@@ -49,6 +49,7 @@ body {
 
 .hintTitle{
   margin-left:70px;
+  color:#000000;
 }
 
 .hintContents {
