@@ -19,20 +19,22 @@ body {
 }
 
 .bottomnav {
+  width:100%;
   margin:0 auto;
 }
 
 .bottomnav li{
   display: inline-block;
   _display: inline;
-  font-size:20px;
-  padding-top:10px;
   width:30%;
 }
+.bottomnav li a i{
+  line-height:120%;
+  font-size:20px;
+}
 
-.bottomnav li a {
-  top:-8px;
-  font-size:8px;
+.bottomnav li a p {
+  font-size:10px;
 }
 
 /*LIST*/
