@@ -14,12 +14,17 @@ body {
 
 /* nav */
 .navbar{
-    background-color:#263147;
-    color:#ffffff;
+  background-color:#263147;
+  color:#ffffff;
+}
+
+.nav-container{
+  height:50px;
 }
 
 .bottomnav {
   width:100%;
+  height:50px;
   margin:0 auto;
 }
 
