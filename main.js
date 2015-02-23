@@ -22,7 +22,7 @@ $.get(requestUrl,
 function Json2html(data){
   var html="";
   for(var i = 0;i<data.length;i++){
-    console.log(data[i]);
+//    console.log(data[i]);
     html+="<div class='hintList'>";
     html+="<a href='#hintModal' data-toggle='modal' onclick='hintModalContent("+(i+1)+");''>";
     html+="<img src='"+data[i].gsx$image.$t+"' class='listImg'/>";
@@ -30,6 +30,6 @@ function Json2html(data){
     html+="<div class='hintContents'>"+data[i].gsx$comment.$t+"</div>";
     html+="</a></div>";
   }
-  console.log($("#siteAbout"));
+//  console.log($("#siteAbout"));
   $("#siteAbout").after(html);
 }
