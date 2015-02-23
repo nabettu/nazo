@@ -2,7 +2,8 @@ var sheetId ="1_-Of24WGgGGq1SfdjqaglwN9OfMweMVbS7pMtgCmKh4";//なぞなぞデー
 
 //ページの読み込みが終わったら読み込まれる関数
 window.onload = function(){
-  $("#bottomNav")[0].style.height=(window.innerWidth/6.4)+50;
+  (window.innerWidth/6.4 > 100)? $("#bottomNav")[0].style.height=150 : $("#bottomNav")[0].style.height=(window.innerWidth/6.4)+50;
+
 };
 
 //Spredsheetのjsonを持ってくる
