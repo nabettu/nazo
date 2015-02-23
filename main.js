@@ -1,9 +1,9 @@
 var sheetId ="1_-Of24WGgGGq1SfdjqaglwN9OfMweMVbS7pMtgCmKh4";//なぞなぞデータの入ったエクセル
+var xlsJson;//エクセルのデータのJson
 
 //ページの読み込みが終わったら読み込まれる関数
 window.onload = function(){
   (window.innerWidth/6.4 > 100)? $("#bottomNav")[0].style.height=150 : $("#bottomNav")[0].style.height=(window.innerWidth/6.4)+50;
-
 };
 
 //Spredsheetのjsonを持ってくる
@@ -13,14 +13,23 @@ $.get(requestUrl,
   function(data){
     //リクエストが成功した際に実行する関数
     //console.log(data);
-    //jsonの結果を配列へ成形し、HTML出力する関数へ入力する
-    Json2array(data.feed.entry);
+    xlsJson = data.feed.entry;
+    //jsonの結果をHTML出力する関数へ入力する
+    Json2html(xlsJson);
   }
-  );
+);
 
-function Json2array(data){
+function Json2html(data){
+  var html="";
   for(var i = 0;i<data.length;i++){
     console.log(data[i]);
-
+    html+="<div class='hintList'>";
+    html+="<a href='#hintModal' data-toggle='modal' onclick='hintModalContent("+(i+1)+");''>";
+    html+="<img src='"+data[i].gsx$image.$t+"' class='listImg'/>";
+    html+="<div class='hintTitle'>第"+(i+1)+"問</div>";
+    html+="<div class='hintContents'>"+data[i].gsx$comment.$t+"</div>";
+    html+="</a></div>";
   }
+  console.log($("#siteAbout"));
+  $("#siteAbout").after(html);
 }
