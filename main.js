@@ -1,11 +1,6 @@
 var sheetId ="1_-Of24WGgGGq1SfdjqaglwN9OfMweMVbS7pMtgCmKh4";//なぞなぞデータの入ったエクセル
 var xlsJson;//エクセルのデータのJson
 
-//ページの読み込みが終わったら読み込まれる関数
-window.onload = function(){
-  (window.innerWidth/6.4 > 100)? $("#bottomNav")[0].style.height=150 : $("#bottomNav")[0].style.height=(window.innerWidth/6.4)+50;
-};
-
 //Spredsheetのjsonを持ってくる
 var requestUrl = "https://spreadsheets.google.com/feeds/list/"+sheetId+"/od6/public/values?alt=json";
 $.get(requestUrl,

@@ -80,11 +80,19 @@ body {
   max-width:200px;
 }
 
-#answerAd{
-  position:fixed;
-  left:0;
+@media screen and (max-width: 321px) {
+  #answerAd{
+    position:fixed;
+    left:0;
+  }
+
+  #answer{
+    padding-top:250px;
+  }
 }
 
-#answer{
-  padding-top:250px;
+@media screen and (min-width: 321px) {
+  #answerAd{
+  margin:0 auto;
+  }
 }
