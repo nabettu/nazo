@@ -63,3 +63,23 @@ body {
   float:left;
   height:50px;
 }
+
+/*Modal*/
+.modal {
+  overflow-y: auto;
+  max-height: 90%;
+}
+
+.aboutModalImg{
+  width:100%;
+  max-width:200px;
+}
+
+#answerAd{
+  position:fixed;
+  left:0;
+}
+
+#answer{
+  padding-top:250px;
+}
