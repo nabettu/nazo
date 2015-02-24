@@ -31,7 +31,7 @@ body {
 .bottomnav li{
   display: inline-block;
   _display: inline;
-  width:30%;
+  width:25%;
 }
 .bottomnav li a i{
   line-height:120%;
