@@ -12,6 +12,8 @@
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap/flat/css/flat-ui.css" rel="stylesheet">
   <link href="fa/css/font-awesome.css" rel="stylesheet">
+  <link href="icomoon/style.css" rel="stylesheet">
+
   <link href="main.css" rel="stylesheet" type="text/css" media="all">
 
   <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -67,7 +69,7 @@
       <div class="nav-container">
           <ul class="nav navbar-nav bottomnav">
             <li><a href="#friendModal" data-toggle="modal"><i class="fa fa-user-plus"></i><p>友だち</p></a></li>
-            <li><a href="#shareModal"><i class="fa fa-share-alt"></i><p>シェア</p></a></li>
+            <li><a href="#shareModal" data-toggle="modal"><i class="fa fa-share-alt"></i><p>シェア</p></a></li>
             <li><a href="#"><i class="fa fa-question-circle"></i><p>なぞ投稿</p></a></li>
             <li><a href="#"><i class="fa fa-paper-plane"></i><p>問合せ</p></a></li>
           </ui>
@@ -177,7 +179,7 @@
           <div class="modal-content">
           <div class="modal-body">
             <h5>なぞなぞBotと友達になろう！</h5>
-            こちらのURLをLINEの友人追加→QRコードで読み込むか、<br>
+            こちらのQRコードをLINEの友人追加→QRコードで読み込むか、<br>
             <img class="aboutModalImg" src="http://qr-official.line.me/L/xo5jeTnYIs.png"><br>
             こちらの友人追加ボタンをタップしてLINE上で友人追加をしてみよう！<br>
             <a href="http://line.me/ti/p/%40zur5572i"><img height="36" border="0" alt="友だち追加数" src="http://biz.line.naver.jp/line_business/img/btn/addfriends_ja.png"></a><br>
@@ -189,6 +191,25 @@
           </div>
       </div>
   </div><!--friendmodal 友人追加-->
+
+  <div id="shareModal" class="modal fade in" aria-hidden="false">
+      <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-body">
+            <h5>なぞなぞBotを友達に教えよう！</h5>
+            こちらのURLを友達のLINEで友人追加→QRコードで読み込ませてあげよう！<br>
+            <img class="aboutModalImg" src="http://qr-official.line.me/L/xo5jeTnYIs.png"><br>
+            <h5>SNSでシェアして教えよう！</h5>
+            <a class="shareBtn line" href="http://line.me/R/msg/text/?なぞなぞBotのページ%0D%0Ahttp%3A%2F%2Ftatsuakiw.github.io%2Fnazo%2F"><span class="icon-line"></span>&nbsp;メッセージを送る</a>
+            <a class="shareBtn twitter" href="http://twitter.com/intent/tweet?url=http%3A%2F%2Ftatsuakiw.github.io%2Fnazo%2F&text=なぞなぞBotのページ&tw_p=tweetbutton"><i class="fa fa-twitter"></i>&nbsp;ツイートする</a>
+            <a class="shareBtn facebook" href="http://www.facebook.com/sharer.php?src=bm&u=http%3A%2F%2Ftatsuakiw.github.io%2Fnazo%2F&t=なぞなぞBotのページ" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-facebook"></i>&nbsp;シェアする</a>
+          </div>
+          <div class="modal-footer">
+              <a href="#" class="btn btn-warning" data-dismiss="modal">閉じる</a>
+          </div>
+          </div>
+      </div>
+  </div><!--sharemodal-->
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

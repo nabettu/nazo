@@ -96,3 +96,36 @@ body {
   margin:0 auto;
   }
 }
+
+/* share */
+.shareBtn{
+  width:100%;
+  height:80px;
+  display:block;
+  max-width:300px;
+  text-align:center;
+  vertical-align:middle;
+  color:#fff;
+  background-color:#00C300;
+  border-radius:10px;
+  margin-bottom:10px;
+  padding-top:15px;
+  font-size:25px;
+}
+
+.shareBtn i,.shareBtn span{
+  color:#fff;
+  font-size:35px;
+  margin-top:5px;
+}
+
+.twitter{
+  padding-top:0;
+  background: #55acee;
+  height:50px;
+}
+.facebook{
+  padding-top:0;
+  background: #315096;
+  height:50px;
+}
