@@ -68,10 +68,10 @@
   <div id="bottomNav" class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="nav-container">
           <ul class="nav navbar-nav bottomnav">
-            <li><a href="#friendModal" data-toggle="modal"><i class="fa fa-user-plus"></i><p>友だち</p></a></li>
+            <li><a href="#friendModal" data-toggle="modal"><i class="fa fa-user-plus"></i><p>友達追加</p></a></li>
             <li><a href="#shareModal" data-toggle="modal"><i class="fa fa-share-alt"></i><p>シェア</p></a></li>
-            <li><a href="#"><i class="fa fa-question-circle"></i><p>なぞ投稿</p></a></li>
-            <li><a href="#"><i class="fa fa-paper-plane"></i><p>問合せ</p></a></li>
+            <li><a href="#infoModal" data-toggle="modal"><i class="fa fa-question-circle"></i><p>なぞ投稿</p></a></li>
+            <li><a href="#infoModal" data-toggle="modal"><i class="fa fa-paper-plane"></i><p>問合せ</p></a></li>
           </ui>
       </div>
       <script type="text/javascript"><!--nend footer-->
@@ -136,7 +136,7 @@
           <div class="modal-body">
             <h5>ようこそなぞなぞBotのページへ</h5>
             <img src="img/face.png" class="aboutModalImg"/><br>
-            このページはなぞなぞBot出すなぞなぞのヒントページです。<br>
+            このページはなぞなぞBotの出すなぞなぞのヒントページです。<br>
             なんとなぞなぞBotはLINEで友達になると自動でなぞなぞを出題してくれて、メッセージで回答ができます！<br><br>
             ぜひアナタも下メニューの友達追加ボタンからLINEで友達になってなぞなぞに挑戦してみてください！！！
           </div>
@@ -210,6 +210,25 @@
           </div>
       </div>
   </div><!--sharemodal-->
+
+  <div id="infoModal" class="modal fade in" aria-hidden="false">
+      <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-body">
+            <h5>お問い合わせ</h5>
+            管理人のLINEアカウントはこちらです。<br>
+            <img class="aboutModalImg" src="http://qr-official.line.me/L/tL1GM0rDUO.png"><br>
+            <a href="http://line.me/ti/p/%40fea3482k"><img height="36" border="0" alt="友だち追加数" src="http://biz.line.naver.jp/line_business/img/btn/addfriends_ja.png"></a><br>
+            お問い合わせや、なぞなぞの投稿はこちらのアカウントまでよろしくお願いします。<br>
+            「この問題のここがわかりにくいのでこうしたほうがよい」などの声も募集していますので<br>
+            是非お気軽に連絡してください。
+          </div>
+          <div class="modal-footer">
+              <a href="#" class="btn btn-warning" data-dismiss="modal">閉じる</a>
+          </div>
+          </div>
+      </div>
+  </div><!--infomodal-->
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
