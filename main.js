@@ -8,8 +8,8 @@ window.onload = function(){
   xlsLoad(requestUrl);
 };
 
-var lineref = "line";
-if(getQueryString().ref == lineref){
+var lineref = "http://line.me/";
+if(getQueryString().ref == "line"){
     delete window.document.referrer;
     window.document.referrer = lineref;
     window.document.__defineGetter__('referrer', function () {
