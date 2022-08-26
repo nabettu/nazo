@@ -1,11 +1,7 @@
-var sheetId ="1_-Of24WGgGGq1SfdjqaglwN9OfMweMVbS7pMtgCmKh4";//なぞなぞデータの入ったエクセル
-var xlsJson;//エクセルのデータのJson
-
-//Spredsheetのjsonを持ってくるURL
-var requestUrl = "https://spreadsheets.google.com/feeds/list/"+sheetId+"/od6/public/values?alt=json";
+let xlsJson
 
 window.onload = function(){
-  xlsLoad(requestUrl);
+  xlsLoad("./answer.json");
 };
 
 var lineref = "http://line.me/";
@@ -18,43 +14,40 @@ if(getQueryString().ref == "line"){
 }
 
 function xlsLoad(requestUrl){
-  $.get(requestUrl,
-    {dataType:"json"},
-    function(data){
-      //リクエストが成功した際に実行する関数
-      //console.log(data);
-      xlsJson = data.feed.entry;
-      //jsonの結果をHTML出力する関数へ入力する
-      Json2html(xlsJson);
-    }
-  );
+  fetch(requestUrl)
+    .then(async (result)=>{
+        const data = await result.json()
+        //リクエストが成功した際に実行する関数
+        console.log(data.answer);
+        
+        xlsJson = data.answer;
+        //jsonの結果をHTML出力する関数へ入力する
+        Json2html(xlsJson);
+      })
 }
 
 function Json2html(data){
   var html="";
-  for(var i = 0;i<(data.length/5);i++){
-    for(var j = 0;j<5;j++){
-      var n = i*5+j;
+  for(var i = 1;i<21;i++){
+    const hint = data[i]
       html+="<div class='hintList'>";
-      html+="<a href='#hintModal' data-toggle='modal' onclick='hintModalContent("+n+");''>";
-      html+="<img src='"+data[n].gsx$image.$t+"' class='listImg'/>";
-      html+="<div class='hintTitle'>第"+(n+1)+"問</div>";
-      html+="<div class='hintContents'>"+data[n].gsx$comment.$t+"</div>";
+      html+="<a href='#hintModal' data-toggle='modal' onclick='hintModalContent("+i+");''>";
+      html+="<img src='img/face.png' class='listImg'/>"
+      html+="<div class='hintTitle'>第"+(i)+"問</div>";
+      html+="<div class='hintContents'>"+hint.hint+"</div>";
       html+="</a></div>";
     }
-    $("#iconAd"+i).before(html);
+    $("#siteAbout").after(html);
     html="";
-  }
 //  console.log($("#siteAbout"));
 }
 
 function hintModalContent(number){
   $("#hintNumber")[0].innerHTML = "第"+(number+1)+"問";
-  $("#hintModalQ")[0].innerHTML = xlsJson[number].gsx$question.$t;
-  $("#hintModalImg")[0].src = xlsJson[number].gsx$image.$t;
-  $("#hint")[0].innerHTML = xlsJson[number].gsx$hint.$t;
-  $("#answer")[0].innerHTML = "答え："+ xlsJson[number].gsx$answer.$t;
-  $("#explanation")[0].innerHTML = xlsJson[number].gsx$explanation.$t;
+  $("#hintModalQ")[0].innerHTML = xlsJson[number].question;
+  $("#hint")[0].innerHTML = xlsJson[number].hint;
+  $("#answer")[0].innerHTML = "答え："+ xlsJson[number].answer;
+  $("#explanation")[0].innerHTML = xlsJson[number].explanation;
   //console.log(xlsJson);
 }
 
